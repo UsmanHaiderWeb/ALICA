@@ -7,7 +7,7 @@ export const sounds = {
     volume: 0.1,
   }),
   click: new Howl({
-    src: ['https://actions.google.com/sounds/v1/interfaces/button_push.ogg'],
+    src: ['/audios/mixkit-sci-fi-interface-robot-click-901.wav'],
     volume: 0.3,
   }),
 };

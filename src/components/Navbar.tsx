@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav ref={navRef} className="w-full flex items-center justify-between px-8 py-6 z-50 relative gsap-nav">
-      <div className="flex items-center gap-2 text-neon-blue cursor-pointer" onMouseEnter={playHoverSound}>
+      <div className="flex items-center gap-2 text-neon-blue cursor-pointer active:scale-95 transition-transform" onMouseEnter={playHoverSound}>
         <Gamepad2 className="w-6 h-6" />
         <span className="font-orbitron font-bold text-xl tracking-widest">ALICA</span>
       </div>
@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
           <a 
             key={link} 
             href={`#${link.toLowerCase()}`}
-            className="hover:text-neon-blue transition-colors duration-300"
+            className="hover:text-neon-blue transition-all duration-300 cursor-pointer active:scale-95 inline-block"
             onMouseEnter={playHoverSound}
           >
             {link}

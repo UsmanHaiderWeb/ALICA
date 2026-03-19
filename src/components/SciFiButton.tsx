@@ -19,7 +19,7 @@ export const SciFiButton: React.FC<SciFiButtonProps> = ({
 
   return (
     <button
-      className={`relative group flex items-center justify-center font-rajdhani font-bold tracking-wider uppercase transition-all duration-300 ${
+      className={`relative group flex items-center justify-center font-rajdhani font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer active:scale-95 ${
         isFilled ? 'text-white' : 'text-neon-blue'
       } ${className}`}
       onMouseEnter={(e) => {
