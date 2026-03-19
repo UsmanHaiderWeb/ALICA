@@ -1,0 +1,5 @@
+{
+  "name": "GSAP Interactive Experience",
+  "description": "A React application built section by section with Tailwind CSS, GSAP animations, and sound effects.",
+  "requestFramePermissions": []
+}
