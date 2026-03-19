@@ -51,6 +51,7 @@ export const AboutSection: React.FC = () => {
       let scale = 0.6;
       let opacity = 0;
       let zIndex = 0;
+      let rotationY = -45;
       let pointerEvents = 'none';
 
       if (visualIndex === 0) {
@@ -59,12 +60,14 @@ export const AboutSection: React.FC = () => {
         scale = 0.8;
         opacity = 0;
         zIndex = 10;
+        rotationY = 30; // Angled away to the left
       } else if (visualIndex === 1) {
         // Front (active)
         left = '0%';
         scale = 1;
         opacity = 1;
         zIndex = 30;
+        rotationY = 0; // Flat, facing user
         pointerEvents = 'auto';
       } else if (visualIndex === 2) {
         // Right 1
@@ -72,12 +75,14 @@ export const AboutSection: React.FC = () => {
         scale = 0.9;
         opacity = 0.8;
         zIndex = 20;
+        rotationY = -15; // Angled slightly to the right
       } else if (visualIndex === 3) {
         // Right 2
         left = '60%';
         scale = 0.8;
         opacity = 0.4;
         zIndex = 10;
+        rotationY = -30; // Angled more to the right
       }
 
       if (isFirstRender.current) {
@@ -86,6 +91,8 @@ export const AboutSection: React.FC = () => {
           scale,
           opacity,
           zIndex,
+          rotationY,
+          transformPerspective: 1000,
           pointerEvents
         });
       } else {
@@ -94,8 +101,9 @@ export const AboutSection: React.FC = () => {
           scale,
           opacity,
           zIndex,
-          duration: 0.7,
-          ease: 'power2.inOut',
+          rotationY,
+          duration: 0.8,
+          ease: 'back.out(1.2)', // Mechanical sci-fi snap effect
           roundProps: 'zIndex',
         });
         gsap.set(el, { pointerEvents });
